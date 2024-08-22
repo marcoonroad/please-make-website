@@ -32,6 +32,20 @@ improve the layout of menu buttons, the hover effect over
 them seems very awkward, can you make them more clean?
 ```
 
+4th Prompt:
+
+```
+Adicione um modal de chatbot ali pelo fundo-direita da página,
+esse modal flutua independente do scroll que o usuário realiza na
+página. Utilize essa imagem 1024x1024 na URL
+https://www.marcoonroad.dev/please-make-website/sac-robot.jpeg e
+ajuste o tamanho dela para 30x30 para a caixa de chatbot, essa
+caixa de texto se expande quando o usuário clica nele. Por hora
+as conversas enviadas / recebidas não estão integradas, então
+apenas um mock em JavaScript será utilizado, pois futuramente
+existirá uma rota de integração nisso.
+```
+
 ## Adobe Firefly Prompts
 
 ```
