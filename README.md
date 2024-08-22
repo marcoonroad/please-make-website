@@ -54,6 +54,32 @@ circular sobre a imagem em CSS, além de aumentar o tamanho
 para 35x35.
 ```
 
+6th Prompt:
+
+```
+Me mostre apenas o código JavaScript da página, que está dentro
+da tag script, porém, adicione o efeito / caso do modal de
+chatbot aberto, ao clicar no ícone do robô, esse modal contrai
+denovo para mostrar apenas o ícone do robô.
+```
+
+7th Prompt:
+
+```
+O código para contrair o chatbot expandido ao clicar no robô
+não funciona, poderia explicar o por que?
+```
+
+8th Prompt:
+
+```
+O código não funciona porque o elemento #chatbot-toggle, ao
+ser clicado para expandir a caixa de chatbot, some / é oculto,
+portanto adicione no elemento #chatbot-header um handler, que
+ao ser clicado, oculta toda caixa de chatbot sob elemento
+#chatbot e mostra novamente o elemento do ícone #chatbot-toggle.
+```
+
 ## Adobe Firefly Prompts
 
 ```
