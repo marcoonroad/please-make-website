@@ -253,10 +253,18 @@
 
             const chatbotToggle = document.getElementById('chatbot-toggle');
             const chatbot = document.getElementById('chatbot');
+            const chatbotHeader = document.getElementById('chatbot-header');
 
-            // Alterna a classe 'open' para mostrar/ocultar o chatbot
+            // Alterna a visibilidade do chatbot e do ícone
             chatbotToggle.addEventListener('click', function () {
-                chatbot.classList.toggle('open');
+                chatbotToggle.style.display = 'none'; // Oculta o ícone do chatbot
+                chatbot.classList.add('open'); // Mostra a caixa de chatbot
+            });
+
+            // Handler para fechar o chatbot ao clicar no header
+            chatbotHeader.addEventListener('click', function () {
+                chatbot.classList.remove('open'); // Oculta a caixa de chatbot
+                chatbotToggle.style.display = 'flex'; // Mostra o ícone do chatbot novamente
             });
 
             const chatbotInput = document.getElementById('chatbot-input');
