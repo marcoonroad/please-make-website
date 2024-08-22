@@ -125,6 +125,7 @@
 
         /* Chatbot */
         #chatbot {
+            display: none; /* Estado inicial */
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -133,9 +134,12 @@
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            display: none;
             flex-direction: column;
             overflow: hidden;
+        }
+
+        #chatbot.open {
+            display: flex; /* Quando a classe 'open' está presente, o chatbot é mostrado */
         }
 
         #chatbot-header {
@@ -249,12 +253,10 @@
 
             const chatbotToggle = document.getElementById('chatbot-toggle');
             const chatbot = document.getElementById('chatbot');
+
+            // Alterna a classe 'open' para mostrar/ocultar o chatbot
             chatbotToggle.addEventListener('click', function () {
-                if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-                    chatbot.style.display = 'flex';
-                } else {
-                    chatbot.style.display = 'none';
-                }
+                chatbot.classList.toggle('open');
             });
 
             const chatbotInput = document.getElementById('chatbot-input');
