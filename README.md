@@ -21,3 +21,11 @@ Second prompt:
 Show me an example of this website in a single page, with
 CSS and JS included in this single HTML page / file.
 ```
+
+## Adobe Firefly Prompts:
+
+```
+Gere uma imagem 1200x800 de um ambiente corporativo, mais
+especificamente um escritório open-office de tecnologia bem
+descontraído.
+```
