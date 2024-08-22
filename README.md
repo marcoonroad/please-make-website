@@ -32,10 +32,18 @@ improve the layout of menu buttons, the hover effect over
 them seems very awkward, can you make them more clean?
 ```
 
-## Adobe Firefly Prompts:
+## Adobe Firefly Prompts
 
 ```
 Gere uma imagem 1200x800 de um ambiente corporativo, mais
 especificamente um escritório open-office de tecnologia bem
 descontraído.
+```
+
+## Microsoft Designer
+
+```
+Crie um ícone simples e circular de um robô amigável pronto
+para atender dúvidas e sugestões, pois ele está com um fone
+de SAC.
 ```
