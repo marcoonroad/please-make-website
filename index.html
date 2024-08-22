@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive One-Page Website</title>
+
+    <!-- Google Fonts: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+
+        /* Navbar */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            background: #444;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            font-weight: 300;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        section:nth-of-type(even) {
+            background: #f4f4f4;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Simple script for smooth scrolling
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav ul li a');
+            for (const link of links) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Welcome to My Website</h2>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a lacus nisi. Integer tincidunt nunc vitae erat faucibus, vel consectetur nunc commodo.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of services to meet your needs, from web development to digital marketing and more.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have any questions? Feel free to reach out to us at any time. We are here to help!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My Responsive Website</p>
+    </footer>
+</body>
+</html>
