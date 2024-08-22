@@ -41,6 +41,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
@@ -53,7 +54,7 @@
             display: flex;
             justify-content: center;
             list-style: none;
-            background: #444;
+            margin-top: 10px;
         }
 
         nav ul li {
@@ -64,19 +65,20 @@
             text-decoration: none;
             color: #fff;
             font-weight: 400;
-            padding: 10px;
-            transition: background 0.3s;
+            padding: 10px 15px;
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            border-radius: 20px;
         }
 
         nav ul li a:hover {
             background: #555;
-            border-radius: 5px;
+            color: #fff;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
+            background: url('https://www.marcoonroad.dev/please-make-website/background-open-office.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,6 +89,7 @@
         .hero h2 {
             font-size: 3em;
             font-weight: 300;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         /* Sections */
