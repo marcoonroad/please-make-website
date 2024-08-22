@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,6 +123,100 @@
             color: #fff;
         }
 
+        /* Chatbot */
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            max-width: 300px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #chatbot-header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #chatbot-header img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #chatbot-content {
+            padding: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 300px;
+        }
+
+        #chatbot-messages {
+            overflow-y: auto;
+            flex-grow: 1;
+            margin-bottom: 10px;
+        }
+
+        #chatbot-messages p {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #chatbot-input {
+            display: flex;
+        }
+
+        #chatbot-input input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #chatbot-input button {
+            width: 20%;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #chatbot-toggle img {
+            width: 30px;
+            height: 30px;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             nav ul {
@@ -132,12 +226,15 @@
             .hero h2 {
                 font-size: 2.5em;
             }
+
+            #chatbot {
+                width: 80%;
+            }
         }
     </style>
 
     <!-- JavaScript -->
     <script>
-        // Simple script for smooth scrolling
         document.addEventListener('DOMContentLoaded', function () {
             const links = document.querySelectorAll('nav ul li a');
             for (const link of links) {
@@ -147,32 +244,54 @@
                     document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
                 });
             }
+
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbot = document.getElementById('chatbot');
+            chatbotToggle.addEventListener('click', function () {
+                if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+                    chatbot.style.display = 'flex';
+                } else {
+                    chatbot.style.display = 'none';
+                }
+            });
+
+            const chatbotInput = document.getElementById('chatbot-input');
+            chatbotInput.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const message = chatbotInput.querySelector('input').value;
+                if (message.trim() !== '') {
+                    const messageElem = document.createElement('p');
+                    messageElem.textContent = message;
+                    document.getElementById('chatbot-messages').appendChild(messageElem);
+                    chatbotInput.querySelector('input').value = '';
+                }
+            });
         });
     </script>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>My Responsive Website</h1>
+        <h1>Meu Website Responsivo</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>Welcome to My Website</h2>
+        <h2>Bem-vindo ao Meu Website</h2>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>About Us</h2>
+            <h2>Sobre Nós</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a lacus nisi. Integer tincidunt nunc vitae erat faucibus, vel consectetur nunc commodo.</p>
         </div>
     </section>
@@ -180,22 +299,42 @@
     <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <p>We offer a wide range of services to meet your needs, from web development to digital marketing and more.</p>
+            <h2>Nossos Serviços</h2>
+            <p>Oferecemos uma ampla gama de serviços para atender às suas necessidades, desde desenvolvimento web até marketing digital e mais.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>Have any questions? Feel free to reach out to us at any time. We are here to help!</p>
+            <h2>Contate-Nos</h2>
+            <p>Tem alguma dúvida? Sinta-se à vontade para entrar em contato conosco a qualquer momento. Estamos aqui para ajudar!</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 My Responsive Website</p>
+        <p>&copy; 2024 Meu Website Responsivo</p>
     </footer>
+
+    <!-- Chatbot Toggle -->
+    <div id="chatbot-toggle">
+        <img src="https://www.marcoonroad.dev/please-make-website/sac-robot.jpeg" alt="Chatbot">
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot">
+        <div id="chatbot-header">
+            <span>Chatbot</span>
+            <img src="https://www.marcoonroad.dev/please-make-website/sac-robot.jpeg" alt="Chatbot">
+        </div>
+        <div id="chatbot-content">
+            <div id="chatbot-messages"></div>
+            <form id="chatbot-input">
+                <input type="text" placeholder="Digite sua mensagem...">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
