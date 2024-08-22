@@ -46,6 +46,14 @@ apenas um mock em JavaScript será utilizado, pois futuramente
 existirá uma rota de integração nisso.
 ```
 
+5th Prompt:
+
+```
+O ícone do chatbot 20x20 está estranho, faça um filtro de corte
+circular sobre a imagem em CSS, além de aumentar o tamanho
+para 35x35.
+```
+
 ## Adobe Firefly Prompts
 
 ```
